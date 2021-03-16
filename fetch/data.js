@@ -31,7 +31,7 @@ function buildLocalWeatherDiv(position){
    	getWeatherFromAPI(position);
 
     var weatherHTML = "<div id=\"weatherIcon\"></div>"+"<div id=\"weatherReport\"></div>"+"<div id=\"degreesReport\"></div>";
-    weatherHTML += "<div id=\"degreeContainer\"></div>";
+  
 
     weatherDisplay.innerHTML = weatherHTML;
 
@@ -53,7 +53,7 @@ function getWeatherFromAPI(position){
 
     var xhr = new XMLHttpRequest();
 	
-    var apiCall = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&units=metric&&appid=9d06d9b4825f10f79591ff063769f070";
+    var apiCall = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&units=metric&&appid=ddb0a349faf398e7558f063e81b56fb5";
 
     xhr.open("GET", apiCall, false);
     xhr.send();
@@ -112,6 +112,4 @@ function showDegrees(unit){
     }
 }
 showDegrees("C");
-var degreeContainer = document.getElementById("degreeContainer");
-degreeContainer.innerHTML = "<button id=\"showFahrenheitButton\" onclick=\"showFahrenheit()\">in °F</button>";
 }
